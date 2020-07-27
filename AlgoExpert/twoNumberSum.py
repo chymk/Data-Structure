@@ -25,3 +25,4 @@ tar = 5
 
 print(twoNoSumsol1(arr,tar))
 print(twoNoSumsol2(arr,tar))
+
