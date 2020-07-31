@@ -20,9 +20,26 @@ def twoNoSumsol2(array, targetSum):
             return [firstNum, targetSum-firstNum]
     return []
 
-arr = [1,2,3,4,5,6,7,9]
-tar = 5
+def twoNoSumsol3(array, targetSum):
+    array.sort()
+    left = 0
+    right = len(array)-1
+    while left < right:
+        currentSum = array[left] + array[right]
+        #print("left :", array[left], " right :", array[right]," sum :",currentSum)
+        if currentSum == targetSum:
+            return [array[left], array[right]]
+        elif currentSum < targetSum:
+            left+=1
+        elif currentSum > targetSum:
+            right-=1
+    return []
 
-print(twoNoSumsol1(arr,tar))
-print(twoNoSumsol2(arr,tar))
+
+arr = [1,2,3,4,10,11,14,17,20,21,5,6,7,9]
+tar = 11
+
+#print(twoNoSumsol1(arr,tar))
+#print(twoNoSumsol2(arr,tar))
+print(twoNoSumsol3(arr,tar))
 
