@@ -43,7 +43,23 @@ class node:
         if self.right is not None:
             self.right.printTree()
 
+    def closestValuess(self, root, target):
+        return self.closestValue(self, target, float("inf"))
 
+    def closestValue(self,root,target,closest):
+        currentNode = root
+        while currentNode is not None:
+            t1 = abs(closest - target)
+            t2 = abs(currentNode.data - target)
+            if t2 < t1:
+                closest = currentNode.data
+            if currentNode.data > target:
+                currentNode = currentNode.left
+            elif currentNode.data < target:
+                currentNode = currentNode.right
+            else:
+                break
+        return closest
 
 root = node(10)
 root.insert(5)
@@ -54,7 +70,5 @@ root.insert(15)
 root.insert(13)
 root.insert(22)
 root.insert(14)
-root.printTree()
 
-
-
+print(root.closestValuess(root, 19))
