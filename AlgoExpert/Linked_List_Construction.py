@@ -23,13 +23,78 @@ Sample output (after removing 2):
 4 -> 1 -> 5 -> 6
 Sample output (after searching for 5): True'''
 
-# This is an input class. Do not edit. class Node:    def __init__(self, value):        self.value = value        self.prev = None        self.next = None
-# Feel free to add new properties and methods to the class. class DoublyLinkedList:    def __init__(self):        self.head = None        self.tail = None
-    def setHead(self, node):        # Write your code here.        pass
-    def setTail(self, node):        # Write your code here.        pass
-    def insertBefore(self, node, nodeToInsert):        # Write your code here.        pass
-    def insertAfter(self, node, nodeToInsert):        # Write your code here.        pass
-    def insertAtPosition(self, position, nodeToInsert):        # Write your code here.        pass
-    def removeNodesWithValue(self, value):        # Write your code here.        pass
-    def remove(self, node):        # Write your code here.        pass
-    def containsNodeWithValue(self, value):        # Write your code here.        pass
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.prev = None
+        self.next = None
+
+# Feel free to add new properties and methods to the class.
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def setHead(self, node):
+        if self.head is None:
+            self.head = node
+            self.tail = node
+            return
+        else:
+            self.insertBefore(self.head,node)
+        return
+
+
+    def setTail(self, node):
+        if self.tail is None:
+            self.setHead(node)
+            return
+        else:
+            self.insertAfter(self.tail,node)
+
+    def insertBefore(self, node, nodeToInsert):
+        prevNode = node.prev
+        prevNode.next = nodeToInsert
+        nodeToInsert.next = node
+        nodeToInsert.prev =prevNode
+        node.prev = nodeToInsert
+        return
+
+    def insertAfter(self, node, nodeToInsert):
+        nextNode = node.next
+        node.next =nodeToInsert
+        nodeToInsert.prev = node
+        nodeToInsert.next = nextNode
+        return
+
+    def insertAtPosition(self, position, nodeToInsert):
+        location = 0
+        iterateNode = self.head
+        while iterateNode.next and location > position:
+            if location == position:
+                self.insertBefore(iterateNode,nodeToInsert)
+                return
+        return
+
+    def removeNodesWithValue(self, value):
+        iterateNode = self.head
+        while iterateNode.next:
+            if iterateNode.value == value:
+                self.remove(iterateNode)
+                return
+        return
+        pass
+
+    def remove(self, node):
+        prevNode = node.prev
+        nextNode = node.next
+        prevNode.next = nextNode
+        nextNode.prev = prevNode
+        pass
+
+    def containsNodeWithValue(self, value):
+        iterateNode =self.head
+        while iterateNode.next:
+            if iterateNode.value == value:
+                return True
+        return False
