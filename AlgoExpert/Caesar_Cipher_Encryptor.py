@@ -10,7 +10,7 @@ Sample output:"zab"
 '''
 
 
-def caesarCipherEncryptor(str,shift):
+def algo1(str,shift):
     char = list(str)
     ccE = []
     for c in char:
@@ -25,4 +25,18 @@ def shiftChar(c,shift):
     else:
         return chr(96 + (asciValue%122))
 
-print(caesarCipherEncryptor("xyz", 2))
+def algo2(str,shift):
+    alpha = [chr(c) for c in range(97,123)]
+    ccE = []
+    for s in str:
+        ccE.append(getNewLetter(alpha,shift,s))
+    return "".join(ccE)
+
+def getNewLetter(alpha,shift,s):
+    alphaLoc = alpha.index(s)+shift
+    return alpha[alphaLoc] if alphaLoc<=25 else alpha[alphaLoc%26]
+
+
+print(algo1("xyz", 2))
+
+print(algo2("xyzabpqlmawstu", 3))
