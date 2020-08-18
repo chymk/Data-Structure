@@ -16,6 +16,17 @@ def getFibonacci1(num):
     else :
         return getFibonacci1(num-1)+getFibonacci1(num-2)
 
+def getFibonacci2(num):
+    arr =['0','1']
+    counter = 3
+    while counter <= num:
+        next = int(arr[0])+int(arr[1])
+        arr[0] = arr[1]
+        arr[1] = next
+        counter += 1
+    return arr[1]
 
-print(getFibonacci1(8))
+
+
+print(getFibonacci2(8))
 
