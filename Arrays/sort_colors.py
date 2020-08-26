@@ -24,4 +24,16 @@ def sortColors( nums):
 
         return sortColors
 
-print(sortColors([2,1,0,1,0,0,2,1,2,2,2]))
+def sortColors1(nums):
+    counter = 0
+    is_Sorted = False
+    while not is_Sorted:
+        is_Sorted = True
+        for i in range(0,len(nums)-(counter+1)):
+            if nums[i]>nums[i+1]:
+                nums[i],nums[i+1] = nums[i+1],nums[i]
+                is_Sorted = False
+    return nums
+
+
+print(sortColors1([2,1,0,1,0,0,2,1,2,2,2]))
