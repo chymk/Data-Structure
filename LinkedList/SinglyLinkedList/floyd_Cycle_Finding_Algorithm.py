@@ -30,27 +30,17 @@ class LinkedList:
 
 
 
-    def detectLoopbyHashingMethod(self):
-        s= set()
-        current = self.head
-        while current:
-            if current in s:
+    def detectLoop(self):
+        slow_p = self.head
+        fast_p = self.head
+
+        while slow_p and fast_p and fast_p.next:
+
+            slow_p = slow_p.next
+            fast_p = fast_p.next.next
+            if slow_p == fast_p:
+                print(slow_p.data,"  ",fast_p.data)
                 return True
-
-            s.add(current)
-            current = current.next
-
-        return False
-
-    def detectLoopbyChnagingStructure(self):
-        current = self.head
-        while current:
-
-            if current.flag == True:
-                return True
-            current.flag = True
-            current = current.next
-
         return False
 
 
@@ -71,7 +61,4 @@ lList.insertAtEnd(3)
 lList.insertAtEnd(4)
 lList.head.next.next.next = lList.head.next
 
-
-#lList.printLinkedList()
-#print(" is Linked List has Loop : ",lList.detectLoopbyHashingMethod())
-print(" is Linked List has Loop : ",lList.detectLoopbyChnagingStructure())
+print(" is Linked List has Loop : ",lList.detectLoop())
