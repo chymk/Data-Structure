@@ -33,34 +33,36 @@ class LinkedList:
         current = self.head
         prev = None
         while current is not None:
-            if current.data in set:
-                if current == self.head:
-                    self.head = current.next
-                elif current.next is None:
+            if current.data in s:
+                if current.next is None:
                     prev.next = None
+                    return
                 else:
                     prev.next = current.next
-            s.add(current.data)
-            prev = current
-            current = current.next
+                    current = prev.next
+            else:
+                s.add(current.data)
+                prev = current
+                current = current.next
         return
 
 
 
 lList = LinkedList()
-lList.head = Node(5)
+lList.head = Node(0)
 a = Node(6)
 b = Node(7)
 lList.head.next = a
 a.next = b
-lList.insertAtEnd(9)
-lList.insertAtEnd(2)
-lList.insertAtEnd(1)
+lList.insertAtEnd(0)
+lList.insertAtEnd(7)
+lList.insertAtEnd(6)
 lList.insertAtEnd(0)
 lList.insertAtEnd(0)
-lList.insertAtEnd(3)
-lList.insertAtEnd(4)
+lList.insertAtEnd(6)
+lList.insertAtEnd(7)
 
 lList.printLinkedList()
 lList.removeDuplicates()
+print("Unique")
 lList.printLinkedList()
