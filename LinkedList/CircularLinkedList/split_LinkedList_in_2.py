@@ -31,11 +31,21 @@ class ClinkedList:
                 if(current == self.head):
                     break
 
-    def splitLinkedList(self,head1,head2):
-        fastNode = self.head
-        slowNode = self.head
+    def splitLinkedList(self):
+        head = self.head
+        fast = head
+        slow = head
 
-        while
+        while fast.next is not head and fast is not head:
+            slow = slow.next
+            fast = fast.next
+            fast = fast.next
+        middle = slow.next
+        slow.next = head
+        fast.next = middle
+
+        return
+
 
 
 Clist = ClinkedList()
@@ -45,4 +55,7 @@ Clist.push(23)
 Clist.push(27)
 Clist.push(20)
 
+#Clist.printLinkedList()
+
+Clist.splitLinkedList()
 Clist.printLinkedList()
