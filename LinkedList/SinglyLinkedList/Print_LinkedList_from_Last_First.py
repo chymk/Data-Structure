@@ -39,6 +39,7 @@ class LinkedList:
 
 
 
+
 lList = LinkedList()
 lList.head = Node(1)
 a = Node(2)
@@ -56,4 +57,5 @@ lList.insertAtEnd(10)
 lList.printLinkedList()
 print("reverse")
 lList.printReverse(lList.head)
+
 
