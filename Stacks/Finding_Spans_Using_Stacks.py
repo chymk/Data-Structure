@@ -2,6 +2,12 @@ class Stack:
     def __init__(self):
         self.items=[]
 
+    def isEmpty(self):
+        if self.items == []:
+            return True
+        else:
+            return False
+
     def peek(self):
         return self.items[-1]
 
@@ -22,13 +28,27 @@ def findingSpans(A):
             j-=1
     return s
 
+def findingSpans2(A):
+    s = [None]*len(A)
+    d =Stack()
+    for i in range(0,len(A)):
+        while not d.isEmpty() and A[i]>=A[d.peek()]:
+            d.pop()
+        if d.isEmpty():
+            p = -1
+        else:
+            p = d.peek()
+        s[i] = i-p
+        d.push(i)
+    return s
+
 S = Stack()
-S.push(10)
+S.push(6)
+S.push(3)
 S.push(4)
 S.push(5)
-S.push(90)
-S.push(120)
-S.push(80)
+S.push(2)
+
 
 print(findingSpans(S.items))
 
