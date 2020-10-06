@@ -7,7 +7,7 @@ def calculateSpan(price,n, S):
         while (j >= 0) and (price[i] >= price[j]):
             S[i] += 1
             j -= 1
-    return S
+
 
 def printArray(arr, n):
     for i in range(n):
@@ -21,7 +21,7 @@ n = len(price)
 S = [None] * n
 
 # Fill the span values in list S[]
-S = calculateSpan(price, n, S)
+calculateSpan(price, n, S)
 
 # print the calculated span values
 printArray(S, n)
