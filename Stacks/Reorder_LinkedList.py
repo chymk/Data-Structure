@@ -12,15 +12,15 @@ class LinkedList:
 
     def printLinkedList(self):
         current = self.head
-        while current != None:
-            print(current.data)
+        while current is not None:
+            print(current.data,end=" ")
             current = current.next
 
 
     def insertAtEnd(self,data):
         newNode = Node(data)
         current = self.head
-        while current.next is not None:
+        while current is not None and current.next is not None:
             current = current.next
         if self.head is None:
             self.head = newNode
@@ -34,19 +34,19 @@ class LinkedList:
             return None
         current = head
         stack = [-1]
-        while current.next is not None:
+        while current is not None:
             stack.append(current.data)
             current = current.next
         current = head
-        fromStack = True
+        fromStack = False
         fromLinked = head
         list = LinkedList()
-        while current.next is not None:
+        while current is not None:
             if fromStack:
                 list.insertAtEnd(stack.pop())
                 fromStack = False
             else:
-                list.insertAtEnd(fromLinked)
+                list.insertAtEnd(fromLinked.data)
                 fromStack = True
                 fromLinked = fromLinked.next
             current =current.next
@@ -57,10 +57,8 @@ class LinkedList:
 
 lList = LinkedList()
 lList.head = Node(1)
-a = Node(2)
-b = Node(3)
-lList.head.next = a
-a.next = b
+lList.insertAtEnd(2)
+lList.insertAtEnd(3)
 lList.insertAtEnd(4)
 lList.insertAtEnd(5)
 lList.insertAtEnd(6)
