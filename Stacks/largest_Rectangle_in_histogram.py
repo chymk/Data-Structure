@@ -19,8 +19,11 @@ def largestRectangleArea1(R):
             maxArea = max(maxArea,(minheight*((j-i)+1)))
     return maxArea
 
-def largestRectangleArea2(R):
-    maxArea =0
+def largestRectangleArea2(height):
+    maxArea =-1
+    stack = []
+    for i in stack
+
 
     return maxArea
 
