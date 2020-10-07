@@ -18,7 +18,7 @@ def nearestGreater(A):
             element = s.pop()
             while element < nextNearesGrt:
                 print(str(element), "-->", str(nextNearesGrt))
-                if s == []:
+                if s[-1] == -1:
                     break
                 element = s.pop()
             if element > nextNearesGrt:
@@ -28,6 +28,7 @@ def nearestGreater(A):
         while s[-1]!=-1:
             s.pop()
             nextNearesGrt = float('-inf')
+            print("Tri")
             print(str(element), "-->", str(nextNearesGrt))
 
 print(nearestGreater([2,1,5,6,2,3]))
