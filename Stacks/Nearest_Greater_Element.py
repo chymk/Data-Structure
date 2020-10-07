@@ -7,4 +7,27 @@ def nearestGrater(A):
                 A[i] = temp
     return A
 
-print(nearestGrater([2,1,5,6,2,3]))
+def nearestGreater(A):
+    s = [-1]
+    i = 0
+    s.append(A[0])
+    for i in range(0,len(A)):
+        nextNearesGrt = A[i]
+        if s[-1]!=-1:
+            print("Not Empty")
+            element = s.pop()
+            while element < nextNearesGrt:
+                print(str(element), "-->", str(nextNearesGrt))
+                if s == []:
+                    break
+                element = s.pop()
+            if element > nextNearesGrt:
+                s.append(element)
+        s.append(nextNearesGrt)
+
+        while s[-1]!=-1:
+            s.pop()
+            nextNearesGrt = float('-inf')
+            print(str(element), "-->", str(nextNearesGrt))
+
+print(nearestGreater([2,1,5,6,2,3]))
