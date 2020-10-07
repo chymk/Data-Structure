@@ -20,18 +20,28 @@ def largestRectangleArea1(R):
     return maxArea
 
 def largestRectangleArea2(height):
-    maxArea =-1
-    stack = []
-    for i in stack
+    maxArea = 0
+    stack = [-1]
+    for i in range(len(height)):
+        while stack[-1] != -1 and height[stack[-1]] >= height[i]:
+            lastElementIndex = stack.pop()
+            maxArea = max(maxArea,height[lastElementIndex]*(i-stack[-1]-1))
+            print("Stack ->",stack," i ->",i,"maxArea ->",maxArea,"height->",height[i])
+        stack.append(i)
 
 
-    return maxArea
+    while stack[-1]!= -1:
+        print("2nd While")
+        lastElementIndex = stack.pop()
+        maxArea = max(maxArea, height[lastElementIndex]*(len(height)-stack[-1]-1))
+        print("Stack ->", stack, " i ->", i, "maxArea ->", maxArea,"height->",height[i])
+        return maxArea
 
 #Time - O(n^3)
-print(largestRectangleArea([2,1,5,6,2,3]))
+#print(largestRectangleArea([2,1,5,6,2,3]))
 
 #Time - O(n^2)
-print(largestRectangleArea1([2,1,5,6,2,3]))
+#print(largestRectangleArea1([2,1,5,6,2,3]))
 
 # Time - O(n)
 print(largestRectangleArea2([2,1,5,6,2,3]))
