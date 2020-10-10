@@ -17,3 +17,7 @@ class Queue:
             return
         self.rear = (self.rear+1) % self.capacity
 
+
+
+    def dequeue(self):
+        return
