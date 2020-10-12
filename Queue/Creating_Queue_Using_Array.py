@@ -16,11 +16,38 @@ class Queue:
             print("Queue is full")
             return
         self.rear = (self.rear+1) % self.capacity
-
-
-
-
-
+        self.Q[self.rear] = item
+        self.size = self.size + 1
+        print("{} enqueued to queue".format(item))
 
     def dequeue(self):
-        return
+        if self.isEmpty():
+            print("Queue is Empty")
+            return
+        print("{} dequeue from queue".format(self.Q[self.front]))
+        self.front = (self.front+1) % self.capacity
+        self.size = self.size -1
+
+
+    def queueFront(self):
+        if self.isEmpty():
+            print("Queue is Empty")
+            return
+        print(self.Q[self.front])
+
+    def queueRear(self):
+        if self.isEmpty():
+            print("Queue is Empty")
+            return
+        print(self.Q[self.rear])
+
+if __name__ == "__main__":
+    queue = Queue(30)
+    queue.Enqueue(10)
+    queue.Enqueue(20)
+    queue.Enqueue(30)
+    queue.Enqueue(40)
+    queue.dequeue()
+    queue.queueFront()
+    queue.queueRear()
+
