@@ -27,14 +27,24 @@ class Queue:
         temp = self.front.next
         self.front = temp
 
+def dispalyNode(q):
+    if q.front is None:
+        print("Queue is empty")
+    temp = q.front
+    while temp is not None:
+        print(temp.data , end=" ")
+        temp = temp.next
+
+
+
 if __name__ == '__main__':
     q = Queue()
     q.Enque(10)
     q.Enque(20)
     q.Enque(30)
     q.Enque(40)
+    dispalyNode(q)
 
-    print(q.front.data)
     q.Deque()
-    print(q.front.data)
-    print(q.rear.data)
+    print("\nAfter deque")
+    dispalyNode(q)
