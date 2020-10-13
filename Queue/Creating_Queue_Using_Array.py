@@ -16,6 +16,7 @@ class Queue:
             print("Queue is full")
             return
         self.rear = (self.rear+1) % self.capacity
+        print("{} location of self.rear".format(self.rear))
         self.Q[self.rear] = item
         self.size = self.size + 1
         print("{} enqueued to queue".format(item))
@@ -24,8 +25,10 @@ class Queue:
         if self.isEmpty():
             print("Queue is Empty")
             return
+        print("{} location of self.front".format(self.front))
         print("{} dequeue from queue".format(self.Q[self.front]))
         self.front = (self.front+1) % self.capacity
+
         self.size = self.size -1
 
 
@@ -50,4 +53,5 @@ if __name__ == "__main__":
     queue.dequeue()
     queue.queueFront()
     queue.queueRear()
+    queue.dequeue()
 
