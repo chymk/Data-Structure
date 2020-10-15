@@ -14,6 +14,7 @@ class Stack:
         newNode = Node()
         newNode.data = data
         newNode.next = self.root
+
         self.root = newNode
 
     def peek(self):
