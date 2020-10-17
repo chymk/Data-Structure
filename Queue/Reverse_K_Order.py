@@ -17,6 +17,8 @@ class Stack:
 
         self.root = newNode
 
+
+
     def peek(self):
         if self.isEmpty():
             return float('-inf')
