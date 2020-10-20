@@ -13,6 +13,23 @@ def findMaxNode(root):
     findMaxNode(root.right)
     return max
 
+def MaximumNode(root):
+    maximum = -99
+    stack = []
+    node = root
+    while stack or node:
+
+        if node:
+            stack.append(node)
+            node = node.left
+
+        else:
+            node = stack.pop()
+            if node.data > maximum:
+                maximum = node.data
+            node = node.right
+    return maximum
+
 if __name__== '__main__':
     root = Node(2)
     root.left = Node(7)
@@ -23,4 +40,4 @@ if __name__== '__main__':
     root.right.right = Node(9)
     root.right.right.left = Node(4)
 
-    print(findMaxNode(root))
+    print(MaximumNode(root))
