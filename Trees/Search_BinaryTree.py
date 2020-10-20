@@ -24,7 +24,7 @@ def searchData(root,data):
     q = deque()
     q.enque(root)
     node = root
-    while not q.isempty()
+    while not q.isempty():
         node = q.dequeue()
         if node.data == data:
             return 1
