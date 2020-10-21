@@ -6,7 +6,15 @@ def SizeOfBinaryTree(root):
 def findSizeUSingLevelOrder(root):
     if root is None:
         return 0
+    size = 0
     q = Queue()
     q.enque(root)
     node = root
     while not q.isEmpty():
+        node =q.deque()
+        size += 1
+        if node.left is not None:
+            q.enque(node.left)
+        if node.right is not None:
+            q.enque(node.right)
+    return size
