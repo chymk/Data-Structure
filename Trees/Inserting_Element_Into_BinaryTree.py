@@ -28,3 +28,10 @@ class BinaryTree:
         if self.right is None:
             self.right = BinaryTree(newNode)
         else:
+            temp = BinaryTree(newNode)
+            temp.right = self.right
+            self.right = temp
+
+
+
+
