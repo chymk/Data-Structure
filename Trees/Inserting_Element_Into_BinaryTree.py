@@ -1,0 +1,19 @@
+class BinaryTree:
+    def __init__(self,data=None):
+        self.data = data
+        self.left = None
+        self.right = None
+
+    def getData(self):
+        return self.data
+
+    def setData(self,data):
+        self.data = data
+
+    def getLeft(self):
+        return self.left
+
+    def getRight(self):
+        return self.right
+
+    def setLeft(self,newNode):
