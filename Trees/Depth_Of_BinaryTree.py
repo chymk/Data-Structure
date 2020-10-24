@@ -9,23 +9,22 @@ def DepthOfBinaryTree(root):
         return 0
     return max(DepthOfBinaryTree(root.left),DepthOfBinaryTree(root.right))+1
 
-def findDepthUSingLevelOrder(root):
+def Depth(root):
     if root is None:
         return 0
-    depthLeft = 0
-    depthRight = 0
     q = []
-    q.append(root)
     node = root
-    while q!=[]:
-        node =q.pop(0)
+    q.append([root,1])
+    temp = 0
+    while len(q)!=0:
+        node,depth = q.pop(0)
+        temp = max(temp,depth)
         if node.left is not None:
-            q.append(node.left)
-            depthLeft += 1
+            q.append([node.left,depth])
         if node.right is not None:
-            q.append(node.right)
-            depthRight += 1
-    return max(depthLeft,depthRight)+1
+            q.append([node.right,depth])
+    return temp
+
 
 if __name__== '__main__':
     root = Node(2)
@@ -37,5 +36,5 @@ if __name__== '__main__':
     root.right.right = Node(9)
     root.right.right.left = Node(4)
 
-    print(DepthOfBinaryTree(root))
-    print(findDepthUSingLevelOrder(root))
+    #print(DepthOfBinaryTree(root))
+    print("Depth",Depth(root))
