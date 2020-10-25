@@ -25,7 +25,6 @@ def printPathRec(root,path,pathLen):
         printPathRec(root.left,path,pathLen)
         printPathRec(root.right,path,pathLen)
 
-
 if __name__== '__main__':
     root = Node(2)
     root.left = Node(7)
