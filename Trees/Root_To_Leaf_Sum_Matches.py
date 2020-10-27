@@ -5,19 +5,17 @@ class Node:
         self.right = None
 
 
-def PathSum(root,arr):
+def rootToLeafSumMatch(root,Sum):
     if root is None:
-        return
-    arr.append(root.data)
-    if root.left is None and root.right is None:
-        print(arr," Sum :",sum(arr))
-        arr.pop()
-        return
+        return False
+    if root.left is None and root.right is None and Sum == root.data:
+        return True
 
-    PathSum(root.left,arr)
-    PathSum(root.right,arr)
-    arr.pop()
-
+    if rootToLeafSumMatch(root.left,Sum-root.data):
+        return True
+    if rootToLeafSumMatch(root.right,Sum-root.data):
+        return True
+    return False
 
 
 if __name__== '__main__':
@@ -30,7 +28,8 @@ if __name__== '__main__':
     root.right.right = Node(9)
     root.right.right.left = Node(4)
 
-    PathSum(root,[])
+
+    print(rootToLeafSumMatch(root,20))
 
 
 
