@@ -16,7 +16,7 @@ def buildtree(inOrder,postOrder):
     root = Node(postOrder[-1])
     rootPos = inOrder.index(postOrder[-1])
     root.left = buildtree(postOrder[:rootPos],inOrder[:rootPos])
-    root.right = buildtree(postOrder[rootPos+1:-1],inOrder[rootPos+1:])
+    root.right = buildtree(postOrder[rootPos:-1],inOrder[rootPos+1:])
     return root
 
 def printInorder(root):
