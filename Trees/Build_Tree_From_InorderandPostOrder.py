@@ -10,12 +10,15 @@ class Node:
    do any error checking for cases where inorder and preorder 
    do not form a tree """
 
-def buildtree(inOrder,postOrder):
+def buildtree(postOrder,inOrder):
     if len(inOrder)<1:
         return None
     root = Node(postOrder[-1])
     rootPos = inOrder.index(postOrder[-1])
+    #print("root :",postOrder[-1])
+    #print("Left : p-",postOrder[:rootPos]," I-",inOrder[:rootPos])
     root.left = buildtree(postOrder[:rootPos],inOrder[:rootPos])
+    #print("Right : p-", postOrder[rootPos:-1], " I-", inOrder[rootPos+1:])
     root.right = buildtree(postOrder[rootPos:-1],inOrder[rootPos+1:])
     return root
 
@@ -26,5 +29,5 @@ def printInorder(root):
     print(root.data, end=" ")
     printInorder(root.right)
 
-root = buildtree([4, 8, 2, 5, 1, 6, 3, 7],[8, 4, 5, 2, 6, 7, 3, 1])
+root = buildtree([8, 4, 5, 2, 6, 7, 3, 1],[4, 8, 2, 5, 1, 6, 3, 7])
 printInorder(root)
