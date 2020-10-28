@@ -21,32 +21,33 @@ def populateNextSibling(root):
     while q !=[]:
         node = q.pop(0)
 
-        if node.left is not None:
+        if node.left:
             q.append(node.left)
-        if node.right is not None:
+        if node.right:
             q.append(node.right)
-        if node.left is not None or node.right is not None:
-            node.nextSibling = q[-1]
+            #print([a.data for a in q])
+        if q!=[]:
+            node.nextSibling = q[0]
     return node
 
 
 
 def printLevel(root):
     while root:
-        print(" ",root.data)
+        print(root.data,end=" ")
         root = root.nextSibling
 
 if __name__== '__main__':
-    root = Node(2)
-    root.left = Node(7)
-    root.right = Node(5)
-    root.left.right = Node(6)
-    root.left.right.left = Node(1)
-    root.left.right.right = Node(3)
-    root.right.right = Node(9)
-    root.right.right.left = Node(4)
+    root = Node(1)
+    root.left = Node(2)
+    root.right = Node(3)
+    root.left.right = Node(5)
+    root.left.left = Node(4)
+    root.right.right = Node(7)
+    root.right.left = Node(6)
 
 
 
-    root=populateNextSibling(root)
+    populateNextSibling(root)
     printLevel(root)
+
