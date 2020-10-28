@@ -14,18 +14,26 @@ class Node:
 def populateNextSibling(root):
     if root is None:
         return None
-    if root.left is not None:
-        root.left.nextSibling = root.right
-    if root.right is not None:
-        if root.nextSibling is not None:
-            root.right.nextSibling = root.nextSibling.left
-    populateNextSibling(root.left)
-    populateNextSibling(root.right)
-    return root
+    q = []
+    q.append(root)
+    node = None
+    count = 0
+    while q !=[]:
+        node = q.pop(0)
 
-def printLeve(root):
+        if node.left is not None:
+            q.append(node.left)
+        if node.right is not None:
+            q.append(node.right)
+        if node.left is not None or node.right is not None:
+            node.nextSibling = q[-1]
+    return node
+
+
+
+def printLevel(root):
     while root:
-        print(root.data)
+        print(" ",root.data)
         root = root.nextSibling
 
 if __name__== '__main__':
@@ -41,4 +49,4 @@ if __name__== '__main__':
 
 
     root=populateNextSibling(root)
-    printLeve(root)
+    printLevel(root)
