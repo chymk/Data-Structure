@@ -21,7 +21,6 @@ def verticalSum(root,column):
 
 
 
-
 if __name__== '__main__':
     root = Node(2)
     root.left = Node(7)
