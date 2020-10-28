@@ -32,5 +32,6 @@ if __name__== '__main__':
     root.right.right = Node(9)
     root.right.right.left = Node(4)
 
+
     verticalSum(root,0)
     print(hashtable)
