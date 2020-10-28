@@ -12,6 +12,11 @@ hashtable = {}
 def verticalSum(root,column):
     if root is None:
         return
+    if not column in hashtable:
+        hashtable[column]=0
+    hashtable[column]=hashtable[column]+root.data
+    verticalSum(root.left,column-1)
+    verticalSum(root.right,column+1)
 
 
 
@@ -26,4 +31,5 @@ if __name__== '__main__':
     root.right.right = Node(9)
     root.right.right.left = Node(4)
 
-    ZigZagTraversal(root)
+    verticalSum(root,0)
+    print(hashtable)
