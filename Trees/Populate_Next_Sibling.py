@@ -8,10 +8,25 @@ class Node:
         self.data = data
         self.left = None
         self.right = None
+        self.nextSibling = None
 
 
-def
+def populateNextSibling(root):
+    if root is None:
+        return None
+    if root.left is not None:
+        root.left.nextSibling = root.right
+    if root.right is not None:
+        if root.nextSibling is not None:
+            root.right.nextSibling = root.nextSibling.left
+    populateNextSibling(root.left)
+    populateNextSibling(root.right)
+    return root
 
+def printLeve(root):
+    while root:
+        print(root.data)
+        root = root.nextSibling
 
 if __name__== '__main__':
     root = Node(2)
@@ -24,5 +39,6 @@ if __name__== '__main__':
     root.right.right.left = Node(4)
 
 
-    verticalSum(root,0)
-    print(hashtable)
+
+    root=populateNextSibling(root)
+    printLeve(root)
