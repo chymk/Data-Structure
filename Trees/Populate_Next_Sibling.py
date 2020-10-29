@@ -28,6 +28,7 @@ def populateNextSibling(root):
             #print([a.data for a in q])
         if q!=[]:
             node.nextSibling = q[0]
+
     return node
 
 
