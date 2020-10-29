@@ -33,6 +33,7 @@ def populateNextSibling(root):
 
 
 
+
 def printLevel(root):
     while root:
         print(root.data,end=" ")
