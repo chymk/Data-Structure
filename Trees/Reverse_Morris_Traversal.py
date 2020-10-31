@@ -12,6 +12,7 @@ def Reverse_Morris_Traversal(root):
     while current:
         if current.right is None:
             print(current.data,end=" ")
+            current = current.left
         else:
             successor = current.right
 
@@ -27,13 +28,7 @@ def Reverse_Morris_Traversal(root):
 
 
 if __name__ == "__main__":
-    """ Constructed binary tree is  
-        1  
-        / \  
-    2     3  
-    / \ / \  
-    4 5 6 7  
-"""
+
 
     root = newNode(1)
     root.left = newNode(2)
