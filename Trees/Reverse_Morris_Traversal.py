@@ -20,6 +20,7 @@ def Reverse_Morris_Traversal(root):
                 successor = successor.left
             if successor.left == None:
                 successor.left = current
+
                 current = current.right
             else:
                 successor.left = None
