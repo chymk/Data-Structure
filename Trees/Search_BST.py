@@ -31,6 +31,16 @@ def search(root,key):
     elif root.left and root.data > key:
         return search(root.left,key)
 
+def SearchByIterate(root,key):
+    current = root
+    while current:
+        if current.data == key:
+            return current.data
+        if current.data > key:
+            current = current.left
+        elif current.data < key:
+            current = current.right
+    return current
 
 
 r = Node(50)
@@ -43,3 +53,4 @@ r = insert(r, 80)
 
 
 print(search(r,60).data)
+print(SearchByIterate(r,50))
