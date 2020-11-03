@@ -42,4 +42,4 @@ r = insert(r, 60)
 r = insert(r, 80)
 
 
-print(search(r,10).data)
+print(search(r,60).data)
