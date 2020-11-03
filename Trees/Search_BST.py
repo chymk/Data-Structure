@@ -26,10 +26,11 @@ def inorder(root):
 def search(root,key):
     if root is None or root.data == key:
         return root
-    if root.data < key:
+    if root.right and root.data < key:
         return search(root.right,key)
-    else:
+    elif root.left and root.data > key:
         return search(root.left,key)
+
 
 
 r = Node(50)
@@ -41,4 +42,4 @@ r = insert(r, 60)
 r = insert(r, 80)
 
 
-print(search(r,60).data)
+print(search(r,10).data)
