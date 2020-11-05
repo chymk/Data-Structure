@@ -23,6 +23,15 @@ def printInorder(root):
 
 
 def checkBST(root):
+    if root is None:
+        return 1
+    if root.left and root.left.data > root.data:
+        return 0
+    if root.right and root.right.data < root.data:
+        return 0
+    if not(checkBST(root.left) and checkBST(root.right)):
+        return 0
+    return 1
 
 
 
@@ -35,7 +44,6 @@ r = insert(r, 60)
 r = insert(r, 80)
 
 printInorder(r)
-
 print("")
-print(distBetweenNodes(r,20,70))
+print(checkBST(r))
 
