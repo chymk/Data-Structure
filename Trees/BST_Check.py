@@ -22,32 +22,8 @@ def printInorder(root):
         printInorder(root.right)
 
 
-def findLCA(root,a,b):
-    while root:
-        if (a<=root.data and b>root.data) or (a>root.data and b<=root.data):
-            return root
-        if a < root.data:
-            root = root.left
-        else:
-            root = root.right
+def checkBST(root):
 
-def distFromRoot(root,x):
-    dist = 0
-    if root is None:
-        return 0
-    current = root
-    while current:
-        dist += 1
-        if current.data == x:
-            return dist -1
-        elif x < current.data:
-            current = current.left
-        else:
-            current = current.right
-
-def distBetweenNodes(root,a,b):
-    LCA = findLCA(root,a,b)
-    return distFromRoot(LCA,a)+distFromRoot(LCA,b)
 
 
 r = Node(50)
