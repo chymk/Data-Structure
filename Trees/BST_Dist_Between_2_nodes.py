@@ -50,10 +50,6 @@ def distBetweenNodes(root,a,b):
     return distFromRoot(LCA,a)+distFromRoot(LCA,b)
 
 
-
-
-
-
 r = Node(50)
 r = insert(r, 30)
 r = insert(r, 20)
