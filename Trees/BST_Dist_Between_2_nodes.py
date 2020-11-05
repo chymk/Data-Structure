@@ -65,5 +65,5 @@ r = insert(r, 80)
 printInorder(r)
 
 print("")
-print(distBetweenNodes(r,20,80))
+print(distBetweenNodes(r,20,70))
 
