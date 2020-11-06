@@ -22,16 +22,20 @@ def printInorder(root):
         printInorder(root.right)
 
 count = 0
+left =0
 def smallestKthElementBST(root,k):
     global count
-    if root:
-        smallestKthElementBST(root.left, k)
-        count += 1
-        if k == count:
-            print(root.data)
-            exit(1)
-            return root.data
-        smallestKthElementBST(root.right, k)
+    global left
+    if root is None:
+        return None
+    if root.left:
+        left = smallestKthElementBST(root.left, k)
+    if left:
+        return left
+    count += 1
+    if k == count:
+       return root
+    return smallestKthElementBST(root.right, k)
 
 
 
