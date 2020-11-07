@@ -19,6 +19,7 @@ def insert(root,key):
 
 def printRange(root,K1,K2):
     if root:
+
         printRange(root.left,K1,K2)
         if root.data >= K1 and root.data <= K2:
             print(root.data)
