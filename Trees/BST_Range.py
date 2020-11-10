@@ -26,6 +26,7 @@ def printRange(root,K1,K2):
         printRange(root.right,K1,K2)
 
 
+
 r = Node(50)
 r = insert(r, 30)
 r = insert(r, 20)
