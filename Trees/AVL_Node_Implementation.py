@@ -47,3 +47,60 @@ class AVLTree:
                 else:
                     root = self.rightLeftRotate(root)
                     taller = False
+        return [root,taller]
+
+    def rightLeftRotate(self,root):
+        X = root.right
+        if X.balanceFactor == 1:
+            root.balanceFactor = 0
+            X.balanceFactor = 0
+            root = self.singleRightRotate(r)
+        else:
+            Y=X.left
+            if Y.balanceFactor == -1:
+                root.balanceFactor = 0
+                X.balanceFactor = 1
+            elif Y.balanceFactor == 0:
+                root.balanceFactor = 0
+                X.balanceFactor = 0
+            else:
+                root.balanceFactor - -1
+                X.balanceFactor = 0
+            Y.balanceFactor = 0
+            root.right = self.sigleLeftRotate(X)
+            root = self.singleRightRotate(root)
+        return root
+
+    def rightLeftRotate(self,root):
+        X = root.left
+        if X.balanceFactor == -1:
+            root.balanceFactor = 0
+            X.balanceFactor = 0
+            root = self.sigleLeftRotate(root)
+        else:
+            Y = X.right
+            if Y.balanceFactor == -1:
+                root.balanceFactor = 1
+                X.balanceFactor = 0
+            elif Y.balanceFactor == 0:
+                root.balanceFactor = 0
+                X.balanceFactor = 0
+            else:
+                root.balanceFactor = 0
+                X.balanceFactor = -1
+            Y.balanceFactor = 0
+            root.left = self.sigleRightRotate(X)
+            root = self.singleLeftRotate(root)
+        return root
+
+    def singleRightRotate(self,root):
+        X = root.right
+        root.right = X.left
+        X.left = root
+        return X
+
+    def singleLeftRotate(self,root):
+
+        return
+
+
