@@ -100,7 +100,7 @@ class AVLTree:
         return X
 
     def singleLeftRotate(self,root):
-        X  = root.left
+        X = root.left
         root.left = X.right
         X.right = root
         return
