@@ -59,4 +59,4 @@ r = insert(r, 60)
 r = insert(r, 80)
 
 inorder(r)
-print(checkAVL(r))
+print("is BST an AVL : ",checkAVL(r))
