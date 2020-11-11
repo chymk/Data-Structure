@@ -10,7 +10,7 @@ class AVLTree:
         self.root = None
 
     def inOrderPrint(self):
-        self.recInOrder(self.root)
+        self.recInOrderPrint(self.root)
 
     def recInOrderPrint(self,root):
         if root:
@@ -67,7 +67,7 @@ class AVLTree:
                 root.balanceFactor - -1
                 X.balanceFactor = 0
             Y.balanceFactor = 0
-            root.right = self.sigleLeftRotate(X)
+            root.right = self.singleLeftRotate(X)
             root = self.singleRightRotate(root)
         return root
 
@@ -76,7 +76,7 @@ class AVLTree:
         if X.balanceFactor == -1:
             root.balanceFactor = 0
             X.balanceFactor = 0
-            root = self.sigleLeftRotate(root)
+            root = self.singleLeftRotate(root)
         else:
             Y = X.right
             if Y.balanceFactor == -1:
@@ -89,7 +89,7 @@ class AVLTree:
                 root.balanceFactor = 0
                 X.balanceFactor = -1
             Y.balanceFactor = 0
-            root.left = self.sigleRightRotate(X)
+            root.left = self.singleRightRotate(X)
             root = self.singleLeftRotate(root)
         return root
 
