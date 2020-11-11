@@ -49,7 +49,6 @@ def inorder(root):
         print(root.data)
         inorder(root.right)
 
-
 r = Node(50)
 r = insert(r, 30)
 r = insert(r, 20)
@@ -60,4 +59,4 @@ r = insert(r, 80)
 
 
 inorder(r)
-print("is BST an AVL : ",checkAVL(r))
+print("BST an AVL : ",checkAVL(r))
