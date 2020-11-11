@@ -105,4 +105,25 @@ class AVLTree:
         X.right = root
         return X
 
+    def height(self):
+        return self.recHeight(self.root)
+
+    def recHeight(self,root):
+        if root == None:
+            return 0
+        else:
+            return max(self.recHeight(root.left),self.recHeight(root.right))+1
+
+def tester():
+    avl = AVLTree()
+    data = [3,1,9,6,0,11,2,5,4]
+
+    for i in range(len(data)):
+        avl.insert(data[i])
+    avl.inOrderPrint()
+    print("height = ",avl.height())
+
+if __name__ == "__main__":
+    tester()
+
 
