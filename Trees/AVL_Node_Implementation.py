@@ -103,6 +103,6 @@ class AVLTree:
         X = root.left
         root.left = X.right
         X.right = root
-        return
+        return X
 
 
