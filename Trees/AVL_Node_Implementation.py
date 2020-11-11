@@ -54,7 +54,7 @@ class AVLTree:
         if X.balanceFactor == 1:
             root.balanceFactor = 0
             X.balanceFactor = 0
-            root = self.singleRightRotate(r)
+            root = self.singleRightRotate(root)
         else:
             Y=X.left
             if Y.balanceFactor == -1:
@@ -100,7 +100,9 @@ class AVLTree:
         return X
 
     def singleLeftRotate(self,root):
-
+        X  = root.left
+        root.left = X.right
+        X.right = root
         return
 
 
