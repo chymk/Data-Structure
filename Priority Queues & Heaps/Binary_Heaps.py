@@ -72,6 +72,7 @@ class Heap:
         self.size = self.size +1
         self.percolateUp(self.size)
 
+
     def buildHeap(self,A):
         i = len(A)//2
         self.size = len(A)
