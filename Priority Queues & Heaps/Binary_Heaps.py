@@ -67,3 +67,16 @@ class Heap:
         self.percolateDown(1)
         return revival
 
+    def insert(self,k):
+        self.heapList.append(k)
+        self.size = self.size +1
+        self.percolateUp(self.size)
+
+    def buildHeap(self,A):
+        i = len(A)//2
+        self.size = len(A)
+        self.heapList = [0]+A[:]
+        while i>0:
+            self.percolateDown(i)
+            i = i-1
+
