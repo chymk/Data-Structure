@@ -30,3 +30,22 @@ class Heap:
                 tmp = self.heapList[i]
                 self.heapList[i] = self.heapList[minimumChild]
                 self.heapList[minimumChild] = tmp
+            i = minimumChild
+
+    def minChild(self,i):
+        if i*2+1 > self.size:
+            return i*2
+        else:
+            if self.heapList[i*2] < self.heapList[i*2+1]:
+                return i*2
+            else:
+                return i*2+1
+
+
+    def percolateUp(self,i):
+        while i//2>0:
+            if self.heapList[i] < self.heapList[i//2]:
+                tmp = self.heapList[i//2]
+                self.heapList[i//2] = self.heapList[i]
+                self.heapList[i] = tmp
+            i = i//2
