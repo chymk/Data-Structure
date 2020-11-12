@@ -49,3 +49,21 @@ class Heap:
                 self.heapList[i//2] = self.heapList[i]
                 self.heapList[i] = tmp
             i = i//2
+
+
+    def deleteMax(self):
+        revival = self.heapList[1]
+        self.heapList[1] = self.heapList[self.size]
+        self.size = self.size-1
+        self.heapList.pop()
+        self.percolateDown(1)
+        return revival
+
+    def deleteMin(self):
+        revival = self.heapList[1]
+        self.heapList[1] = self.heapList[self.size]
+        self.size = self.size-1
+        self.heapList.pop()
+        self.percolateDown(1)
+        return revival
+
