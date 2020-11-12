@@ -22,3 +22,11 @@ class Heap:
         if self.size == 0:
             return -1
         return self.heapList[0]
+
+    def percolateDown(self,i):
+        while (i*2) <= self.size:
+            minimumChild = self.minChild(i)
+            if self.heapList[i] > self.heapList[minimumChild]:
+                tmp = self.heapList[i]
+                self.heapList[i] = self.heapList[minimumChild]
+                self.heapList[minimumChild] = tmp
