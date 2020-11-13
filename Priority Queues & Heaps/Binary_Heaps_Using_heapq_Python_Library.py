@@ -24,7 +24,7 @@ class Minheap:
             self.heap[i],self.heap[self.parent(i)] = self.heap[self.parent(i)],self.heap[i]
 
     def extractMin(self):
-        return heappop(self.heappop())
+        return heappop(self.heap)
 
     def deleteKey(self,i):
         self.decreaseKey(i,float('-inf'))
