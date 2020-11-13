@@ -19,9 +19,9 @@ class Minheap:
 
     def decreaseKey(self,i,newval):
         self.heap[i] = newval
-        while i!=0 and self.heap[self.parent(i)] > self.heap[i]:
+        while i!=0 and self.heap[int(self.parent(i))] > self.heap[i]:
             # Swap heap[i] with heap[parent(i)]
-            self.heap[i],self.heap[self.parent(i)] = self.heap[self.parent(i)],self.heap[i]
+            self.heap[i],self.heap[int(self.parent(i))] = self.heap[int(self.parent(i))],self.heap[i]
 
     def extractMin(self):
         return heappop(self.heap)
@@ -45,3 +45,6 @@ heapObj.insertKey(45)
 
 
 print(heapObj.extractMin())
+print(heapObj.getMin())
+heapObj.decreaseKey(2, 1)
+print(heapObj.getMin())
