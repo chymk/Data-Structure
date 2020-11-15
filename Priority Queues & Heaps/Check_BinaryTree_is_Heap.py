@@ -1,6 +1,5 @@
-# To check if a binary tree
-# is a MAX Heap or not
 class GFG:
+
     def __init__(self, value):
         self.key = value
         self.left = None
