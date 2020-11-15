@@ -56,7 +56,7 @@ heapObj.insertKey(15)
 heapObj.insertKey(5)
 heapObj.insertKey(4)
 heapObj.insertKey(45)
-
+print(heapObj.heap)
 
 #print(heapObj.extractMin())
 #print(heapObj.getMin())
