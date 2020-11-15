@@ -40,6 +40,7 @@ class GFG:
                 self.complete_tree_util(root.right, 2 *
                                         index + 2, node_count))
 
+
     def check_if_heap(self):
         node_count = self.count_nodes(self)
         if (self.complete_tree_util(self, 0, node_count) and
@@ -49,7 +50,6 @@ class GFG:
             return False
 
 
-# Driver Code
 root = GFG(5)
 root.left = GFG(2)
 root.right = GFG(3)
