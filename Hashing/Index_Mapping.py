@@ -3,7 +3,12 @@ def search(x):
         return has[x][0]
     x= abs(x)
     return has[x][1]
-def insert()
+def insert(a,n):
+    for i in range(0,n):
+        if a[i] >= 0:
+            has[a[i]][0] = 1
+        else:
+            has[abs(a[i])][1]=1
 
 
 if __name__ == "__main__":
