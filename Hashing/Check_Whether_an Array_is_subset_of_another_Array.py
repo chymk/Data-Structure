@@ -12,10 +12,11 @@ def isSubset(arr1,arr2,m,n):
     return True
 
 arr1 = [11, 1, 13, 21, 3, 7]
-arr2 = [11, 3, 7, 1]
+arr2 = [11, 3, 7, 1,9]
 
 m = len(arr1)
 n = len(arr2)
+
 if isSubset(arr1, arr2, m, n) == True:
     print("arr2 is subset of arr1 ")
 else:
