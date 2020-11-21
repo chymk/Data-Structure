@@ -14,7 +14,6 @@ def isSubset(arr1,arr2,m,n):
 arr1 = [11, 1, 13, 21, 3, 7]
 arr2 = [11, 3, 7, 1,9]
 
-
 m = len(arr1)
 n = len(arr2)
 
