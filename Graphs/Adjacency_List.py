@@ -34,8 +34,6 @@ class Graph:
                 temp = temp.next
             print(" \n")
 
-
-
 if __name__ == "__main__":
     V = 5
     graph = Graph(V)
