@@ -34,7 +34,6 @@ class Graph:
                 temp = temp.next
             print(" \n")
 
-        # Driver program to the above graph class
 
 
 if __name__ == "__main__":
