@@ -13,7 +13,7 @@ class Graph:
         queue.append(s)
         visited[s] = True
         while queue:
-            if
+            q= queue.pop(0)
 
 g = Graph()
 g.add(0,1)
