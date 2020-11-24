@@ -13,7 +13,10 @@ class Graph:
         queue.append(s)
         visited[s] = True
         while queue:
-            q= queue.pop(0)
+            s= queue.pop(0)
+            for i in self.graph[s]:
+                if visited[i] == False
+
 
 g = Graph()
 g.add(0,1)
