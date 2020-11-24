@@ -9,7 +9,7 @@ class Graph:
 
     def BFS(self,s):
         queue = []
-        visited = [None]*(len(self.graph))
+        visited = [False]*(len(self.graph))
         queue.append(s)
         visited[s] = True
         while queue:
@@ -30,4 +30,5 @@ g.add(2,0)
 g.add(2,3)
 g.add(3,3)
 
+print(g.graph)
 print ("Following is Breadth First Traversal starting from vertex 2",g.BFS(2))
