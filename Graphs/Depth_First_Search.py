@@ -20,8 +20,6 @@ class Graph:
                 self.DFSUtil(i,visited)
 
 
-
-
 g = Graph()
 g.add(0,1)
 g.add(0,2)
