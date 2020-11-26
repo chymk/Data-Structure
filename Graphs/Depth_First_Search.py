@@ -12,7 +12,6 @@ class Graph:
         self.DFSUtil(s,visited)
 
     def DFSUtil(self,s,visited):
-
         visited.add(s)
         print(s,end=" ")
         for i in self.graph[s]:
