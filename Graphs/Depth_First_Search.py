@@ -20,6 +20,7 @@ class Graph:
 
 
 g = Graph()
+
 g.add(0,1)
 g.add(0,2)
 g.add(1,2)
