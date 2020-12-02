@@ -12,6 +12,7 @@ def twoNoSumsol1(array,targetSum):
             secondNum  = array[j]
             if firstNum + secondNum == targetSum:
                 return [firstNum, secondNum]
+
     return []
 
 def twoNoSumsol2(array, targetSum):
