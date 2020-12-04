@@ -5,6 +5,7 @@ class Solution:
         end = 0
         MaxLength = 0
         #print(str," Length ",len(str))
+
         while start < len(str) - 1 and end < len(str):
             c = str[int(end)]
             if c not in s:
