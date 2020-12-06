@@ -13,6 +13,7 @@ class Solution:
                 end = end + 1
                 #print("Inside if ", s)
             else:
+
                 s.remove(str[start:start + 1])
                 #print("Inside Else Remove ", c)
 
