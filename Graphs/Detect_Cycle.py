@@ -22,10 +22,12 @@ class Graph:
 
         visited[v] = True
         recstack[v] = True
+        #print("List",self.graph[v])
+        #print("Node",v)
 
         for neighbour in self.graph[v]:
             if visited[neighbour] == False:
-                if self.isCycleUtil(v,visited,recstack) == True:
+                if self.isCycleUtil(neighbour,visited,recstack) == True:
                     return True
             elif recstack[neighbour] == True:
                 return True
@@ -40,4 +42,7 @@ g.addEdge(1, 2)
 g.addEdge(2, 0)
 g.addEdge(2, 3)
 g.addEdge(3, 3)
+
+
+print("Graph is Cyclic") if g.isCycle() else print("Graph is not Cyclic")
 
