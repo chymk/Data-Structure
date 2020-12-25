@@ -45,6 +45,7 @@ class Graph:
             parent.append(node)
             rank.append(0)
 
+
         while e < self.V-1:
             u,v,w = self.graph[i]
             i = i+1
