@@ -16,4 +16,6 @@ def averageOfContiguousSubArray2(arr,k):
             windowStart += 1
     print(result)
 
+averageOfContiguousSubArray([1, 3, 2, 6, -1, 4, 1, 8, 2],5)
+
 averageOfContiguousSubArray2([1, 3, 2, 6, -1, 4, 1, 8, 2],5)
