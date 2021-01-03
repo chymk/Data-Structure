@@ -10,3 +10,4 @@ def maximumSum(arr,k):
     print(Result)
 
 maximumSum([2,1,5,1,3,2],3)
+maximumSum([2,3,4,1,5],2)
