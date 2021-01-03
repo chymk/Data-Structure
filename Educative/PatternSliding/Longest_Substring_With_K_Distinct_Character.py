@@ -18,3 +18,4 @@ def longestSubString(str,k):
 print(longestSubString("araaci",2))
 print(longestSubString("araaci",1))
 print(longestSubString("cbbebi",3))
+print(longestSubString("abcbbc",2))
