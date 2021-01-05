@@ -18,6 +18,25 @@ def uniqueSubString(str):
 
     print(count)
 
-uniqueSubString("abbbb")
-uniqueSubString("aabccbb")
-uniqueSubString("abccde")
+def uniqueSubStringOptimize(str):
+    windowStart,maxCount = 0,0
+    hashMap = {}
+    print(str)
+    for windowEnd in range(len(str)):
+        rightChar = str[windowEnd]
+
+        if rightChar in hashMap:
+            windowStart = max(windowStart,hashMap[rightChar]+1)
+        hashMap[rightChar] = windowEnd
+        maxCount = max(maxCount,windowEnd-windowStart+1)
+        print(" rightChar",rightChar," windowStart",windowStart
+              , " windowEnd",windowEnd," maxCount",maxCount,"hashmap ",hashMap)
+    print(maxCount)
+
+#uniqueSubString("abbbb")
+#uniqueSubString("aabccbb")
+#uniqueSubString("abccde")
+
+uniqueSubStringOptimize("abbbb")
+uniqueSubStringOptimize("aabccbb")
+uniqueSubStringOptimize("abccde")
