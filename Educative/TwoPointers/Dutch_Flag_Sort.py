@@ -17,4 +17,5 @@ def dutchFlagSort(arr):
             high -= 1
     return  arr
 
+
 print(dutchFlagSort([0,2,0,1,0,1,2,0,1,1,2]))
