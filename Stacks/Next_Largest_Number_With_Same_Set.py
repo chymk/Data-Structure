@@ -20,6 +20,7 @@ def nextLargest(num):
             str1 = s + str1
     return -1
 
-num = 1234986
-print(nextLargest(num))
-print(nextLargest(218765))
+# num = 1234986
+# print(nextLargest(num))
+# print(nextLargest(218765))
+# print(nextLargest(4321))
