@@ -23,6 +23,21 @@ class Graph:
         for vertex in self.graph:
             for edges in self.graph[vertex]:
                 print(vertex,"->",edges[0]," edge weight",edges[1])
+
+
+    def BFS(self,start):
+        visited = [False]*self.vertices_Num
+        q = []
+        q.append(start)
+        visited[start] = True
+        while q:
+            s = q.pop(0)
+            print(s, end="")
+            for vertex in self.graph[s]:
+                if visited[vertex] == False:
+                    q.append(vertex)
+                    visited[vertex] = True
+
 g = Graph()
 g.add_vertices(1)
 g.add_vertices(2)
@@ -37,5 +52,6 @@ g.add_edges(4,1,5)
 print(g.graph)
 
 g.printGraph()
+g.BFS(1)
 
 
