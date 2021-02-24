@@ -38,6 +38,19 @@ class Graph:
                     q.append(vertex)
                     visited[vertex] = True
 
+    def DFS(self):
+        visited = set()
+        for vertex in self.graph:
+            if vertex not in visited:
+                self.DFSUtil(vertex,visited)
+
+    def DFSUtil(self,v,visited):
+        visited.add(v)
+        print(v,end='')
+        for neighbour in self.graph[v]:
+            if neighbour not in visited:
+                self.DFSUtil(neighbour,visited)
+
 g = Graph()
 g.add_vertices(1)
 g.add_vertices(2)
