@@ -15,8 +15,6 @@ def selection_sort(array):
         swap(step,len(array)-1,array)
     return array
 
-
-
 def swap(i, j, array):
     array[i], array[j] = array[j], array[i]
 
