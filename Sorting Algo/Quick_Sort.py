@@ -14,9 +14,21 @@ def partition(arr,l,h):
 
 def quickSort(arr,l,r):
     if l<r:
-        pi = partition(arr,l,r)
-        quickSort(arr,l,pi)
+        pi = partQuick(arr,l,r)
+        print(l,r)
+        quickSort(arr,l,pi-1)
         quickSort(arr,pi+1,r)
+
+def partQuick(arr,start,end):
+    p_index= start
+    pivot = arr[end]
+    for i in range(start,end):
+        if arr[i] <= pivot:
+            arr[i],arr[p_index] = arr[p_index],arr[i]
+            p_index+=1
+    arr[p_index],arr[end] = arr[end],arr[p_index]
+    return p_index
+
 
 
 arr = [10, 7, 8, 9, 1, 5]
