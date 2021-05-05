@@ -5,6 +5,8 @@ def spiralOrderMatrix(mat,R,C):
     while count<totalCount:
         if count ==0:
             print(mat[r][c])
+            count+=1
+
         i = 0
         while i < CCount-1 and count<totalCount:
             c += 1
