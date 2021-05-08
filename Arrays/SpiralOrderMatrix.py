@@ -1,42 +1,23 @@
 def spiralOrderMatrix(mat,R,C):
-    totalCount = R*C
-    RCount,CCount = R,C
-    count,r,c = 0,0,0
-    while count<totalCount:
-        if count ==0:
-            print(mat[r][c])
-            count+=1
-
-        i = 0
-        while i < CCount-1 and count<totalCount:
-            c += 1
-            print(mat[r][c])
-            i += 1
-            count+=1
-        RCount-=1
-
-        i=0
-        while i < RCount and count<totalCount:
-            r += 1
-            print(mat[r][c])
-            i+=1
-            count+=1
-        CCount-=1
-
-        i = 0
-        while i < CCount and count<totalCount:
-            c-=1
-            print(mat[r][c])
-            i+=1
-            count += 1
-        RCount -= 1
-
-        i = 0
-        while i < RCount and count<totalCount:
-            r-=1
-            print(mat[r][c])
-            i+=1
-            count += 1
+    top,down,left,right,dir = 0,R-1,0,C-1,0
+    while top <= down and left <= right:
+        if dir == 0:
+            for i in range(left,right+1):
+                print(mat[top][i])
+            top+=1
+        elif dir == 1:
+            for i in range(top,down+1):
+                print(mat[i][right])
+            right-=1
+        elif dir == 2:
+            for i in range(right,left+1,-1):
+                print(mat[down][i])
+            down-=1
+        elif dir==3:
+            for i in range(down,top+1,-1):
+                print(mat[i][left])
+            left+=1
+        dir = (dir+1)//4
 
 
 R = 4
