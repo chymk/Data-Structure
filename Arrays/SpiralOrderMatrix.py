@@ -10,14 +10,14 @@ def spiralOrderMatrix(mat,R,C):
                 print(mat[i][right])
             right-=1
         elif dir == 2:
-            for i in range(right,left+1,-1):
+            for i in range(right,left-1,-1):
                 print(mat[down][i])
             down-=1
         elif dir==3:
-            for i in range(down,top+1,-1):
+            for i in range(down,top-1,-1):
                 print(mat[i][left])
             left+=1
-        dir = (dir+1)//4
+        dir = (dir+1)%4
 
 
 R = 4
