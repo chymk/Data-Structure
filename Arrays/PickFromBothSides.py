@@ -1,31 +1,22 @@
 class Solution:
-    # @param A : list of integers
-    # @param B : integer
-    # @return an integer
     def solve(self, A, B):
-        X  = []
-        sum = 0
-        for i in range(len(A)):
-            if i<B or i>(len(A)-1-B):
-                X.append(A[i])
-        print(X)
-        for i in range(len(X)):
-            currSum = 0
-            j,k = i,0
-            print("index:",i," ",i+B,"less than",len(X)-1)
-            if i+B < len(X)-1 or i+B>len(X)-B-1:
-                while k < B:
-                    currSum += X[j]
-                    print(X[j])
-                    j = (j + 1) % B
-                    k += 1
-                print(currSum)
-                print("---------------------------")
-            sum = max(currSum,sum)
-        print(sum)
+        sum1,sum2= 0,0
+        sum1 = sum(A)
+        i,j = 0,len(A)-B-1
+        for k in range(i,j+1):
+            sum2 +=A[k]
+        min1 =sum2
+        i+=1
+        j+=1
+        while j< len(A):
+            sum2+=(A[j]-A[i-1])
+            min1 = min(sum2,min1)
+            i+=1
+            j+=1
+        return sum1-min1
 
 
 
 
 s = Solution()
-s.solve([5, -2, 3 , 1, 2],3)
+print(s.solve([2, 5, 3 , 1, -2],3))
