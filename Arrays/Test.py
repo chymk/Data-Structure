@@ -31,6 +31,7 @@ class Bank:
         x[acntId].append({"timestamp": timestamp, "amount": amount, "transactionMode": "credit"})
 
 
+
     def debit(self, acntId, timeteststamp, amount):
         x = {}
         if acntId not in self.Data:
