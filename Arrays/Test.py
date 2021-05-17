@@ -19,47 +19,46 @@
 # [{accountId:[{"timestamp":"10","amount": "20","transactionMode":"credit"},{"timestamp":"10","amount": "20","transactionMode":"credit"},{"timestamp":"10","amount": "20","transactionMode":"credit"}]},]
 class Bank:
     def __init__(self):
-        self.data = []
-        self.dicmap = {}
+        self.data = {}
 
     def credit(self, acntId, timestamp, amount):
+        if acntId not in self.data:
+            self.data[acntId] = []
+        self.data[acntId].append({"timestamp": timestamp, "amount": amount})
+
+
+    def debit(self, acntId, timestamp, amount):
         x = {}
         if acntId not in self.data:
-            x[acntId] = []
-            self.dicmap[acntId] = 0
-        self.dicmap[acntId] += amount
-        x[acntId].append({"timestamp": timestamp, "amount": amount, "transactionMode": "credit"})
-
-
-
-    def debit(self, acntId, timeteststamp, amount):
-        x = {}
-        if acntId not in self.Data:
-            x[acntId] = []
-            self.dicmap[acntId] = 0
-        x[acntId].append({"timestamp": timestamp, "amount": amount, "transactionMode": "debit"})
-        self.dicmap[acntId] -= amount
+            self.data[acntId] = []
+        self.data[acntId].append({"timestamp": timestamp, "amount": -1*amount})
 
     def current(self, acntId):
-        if acntId in self.dicmap:
-            print(self.data)
-            return self.dicmap[acntId]
-        return 0
+        amount=0
+        if acntId in self.data:
+            for item in self.data[acntId]:
+                amount += item["amount"]
+        return amount
 
     def balanceChange(self,acntId, start, end):
         acnt = self.data[acntId]
         amnt = 0
         for item in acnt:
-            if item.transactionMode == "credit":
-                amnt += item.amount
-            else:
-                amnt -= item.amount
+            if item["timestamp"]>=start and item["timestamp"]<=end:
+                amnt += item["amount"]
         return amnt
 
 
 b = Bank()
 b.credit(1, 5, 10)
+b.credit(1,6,1)
+b.credit(1,7,2)
+b.debit(1,8,4)
+b.credit(1,15,5)
+
 print(b.current(1))
+print(b.balanceChange(1,0,10))
+
 
 
 
