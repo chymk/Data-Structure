@@ -47,7 +47,6 @@ class LinkedList:
         return
 
 
-
 lList = LinkedList()
 lList.head = Node(5)
 a = Node(6)
