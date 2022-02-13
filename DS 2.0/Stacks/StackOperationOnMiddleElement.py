@@ -34,6 +34,7 @@ def push(ms, new_data):
             ms.mid = ms.mid.prev
     ms.head = newDLL
 
+
 def pop(ms):
     if ms.count == 0:
         print("stack is empty")
