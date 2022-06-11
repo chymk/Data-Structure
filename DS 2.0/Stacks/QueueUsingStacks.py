@@ -27,4 +27,3 @@ print("Deque operation")
 for x in arr:
     print(Q.deQueue())
 print(Q.deQueue())
-
