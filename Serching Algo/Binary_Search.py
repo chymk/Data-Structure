@@ -1,31 +1,31 @@
-# Time Complexity - O(logn)
-# Space Complexity - O(logn)
-
-def binary_Search_Recur(arr,l,r,x):
-    mid = (l+r)//2
-    if r >= 1:
-        if arr[mid] == x:
+def binary_search(arr,l,r,target):
+    if r>=l:
+        mid = l+(r-l)//2
+        if target == arr[mid]:
             return mid
-        elif x < arr[mid]:
-            return binary_Search_Recur(arr,0,mid-1,x)
+        if target > arr[mid]:
+            return binary_search(arr,mid+1,r,target)
         else:
-            return binary_Search_Recur(arr, mid+1, r, x)
-    else:
-        return -1
-
-# Time Complexity - O(logn)
-# Space Complexity - O(1)
-def binary_Search_Iterate(arr, l, r, x):
-    while l<=r:
-        mid = (l+r)//2
-        if arr[mid] == x:
-            return mid
-        elif x<arr[mid]:
-            r = mid-1
-        else:
-            l = mid+1
+            return binary_search(arr,l,mid-1,target)
     return -1
 
 
-arr = [1,2,3,4,5,6,7,8,9]
-print(binary_Search_Iterate(arr,0,len(arr)-1,9))
+''' Time cOmplexity - O(logn)
+Space Complexity - O(logn)'''
+
+#Non Recursive approach
+
+def binary_search_non_Recursive(arr,l,r,target):
+    while l<=r:
+        mid = l+(r-l)//2
+        if target == arr[mid]:
+            return mid
+        if target < arr[mid]:
+            r = mid -1
+        else:
+            l = mid +1
+    return -1
+
+
+arr= [1,3,5,7,21,54,124,126]
+print(binary_search_non_Recursive(arr,0,(len(arr)-1),124))
