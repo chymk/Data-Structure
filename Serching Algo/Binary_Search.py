@@ -9,7 +9,6 @@ def binary_search(arr,l,r,target):
             return binary_search(arr,l,mid-1,target)
     return -1
 
-
 ''' Time cOmplexity - O(logn)
 Space Complexity - O(logn)'''
 
