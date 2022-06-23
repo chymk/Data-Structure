@@ -29,7 +29,6 @@ def partQuick(arr,start,end):
     arr[p_index],arr[end] = arr[end],arr[p_index]
     return p_index
 
-
 arr = [10, 7, 8, 9, 1, 5]
 n = len(arr)
 quickSort(arr,0,n-1)
