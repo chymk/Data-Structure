@@ -33,6 +33,7 @@ class Graph:
             for j in range(self.verticesNum):
                 if self.graph[i][j] != 0:
                     print(self.vertices[i],"->",self.vertices[j]," Edge Weight ",self.graph[i][j])
+
 g = Graph()
 g.add_vertex(1)
 g.add_vertex(2)
