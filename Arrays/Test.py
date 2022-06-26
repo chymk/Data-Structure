@@ -1,7 +1,5 @@
 # credit(account_id, timestamp, amount) # Adds value to the given account, recording the timestamp. O(1)
-
 # debit(account_id, timestamp, amount) # Subtracts value from the given account, recording the timestamp. O(1)
-
 # current(account_id) # Returns the current balance. O(1)
 
 # # Returns the net change in account value between the given timestamps.
