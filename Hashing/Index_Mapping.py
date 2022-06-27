@@ -22,7 +22,6 @@ if __name__ == "__main__":
     has = [[0 for i in range(2)]
            for j in range(MAX + 1)]
     insert(a, n)
-
     X = -5
     if search(X) == True:
         print("Present")
