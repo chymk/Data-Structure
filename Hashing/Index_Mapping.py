@@ -10,7 +10,6 @@ def insert(a,n):
         else:
             has[abs(a[i])][1]=1
 
-
 if __name__ == "__main__":
 
     a = [-1, 9, -5, -8, -5, -2]
