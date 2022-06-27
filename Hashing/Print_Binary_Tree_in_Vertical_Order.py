@@ -10,7 +10,6 @@ def getVerticalOrder(root,hd,m):
         m[hd].append(root.data)
     except:
         m[hd] = [root.data]
-
     getVerticalOrder(root.left,hd-1,m)
     getVerticalOrder(root.right,hd+1,m)
 
