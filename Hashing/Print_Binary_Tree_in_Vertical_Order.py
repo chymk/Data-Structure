@@ -17,7 +17,6 @@ def printVerticalOrder(root):
     m = dict()
     hd = 0
     getVerticalOrder(root,hd,m)
-
     for index,value in enumerate(sorted(m)):
         for i in m[value]:
             print(i,end=" ")
