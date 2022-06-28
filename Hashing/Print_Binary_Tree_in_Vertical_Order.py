@@ -22,8 +22,6 @@ def printVerticalOrder(root):
             print(i,end=" ")
         print("")
 
-
-
 root = Node(1)
 root.left = Node(2)
 root.right = Node(3)
