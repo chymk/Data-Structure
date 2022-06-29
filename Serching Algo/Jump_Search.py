@@ -1,5 +1,4 @@
 import math
-
 def Jump_Search(arr, x,n):
     step = int(math.sqrt(x))
     prev = 0
