@@ -3,6 +3,7 @@ class Node:
         self.data = data
         self.next = None
 
+
 class CircularQueue:
     def __init__(self):
         self.front = None
