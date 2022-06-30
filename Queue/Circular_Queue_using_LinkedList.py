@@ -34,6 +34,7 @@ class CircularQueue:
             print(temp.data)
             return temp.data
 
+
 def displayQueue(q):
     if q.front is None:
         print("Queue is Empty")
