@@ -17,7 +17,6 @@ class CircularQueue:
         self.rear = newNode
         self.rear.next = self.front
 
-
     def dequeue(self):
         if self.front is None:
             print("Queue is Empty")
