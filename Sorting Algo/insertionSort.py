@@ -8,5 +8,7 @@ def insertionSort(A):
             j-=1
 
 arr = [1,7,3,9,5,2,6,4]
+
 insertionSort(arr)
+
 print(arr)
