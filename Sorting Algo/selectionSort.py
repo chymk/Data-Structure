@@ -6,8 +6,6 @@ def selectionSort(arr):
                 minIdx = j
         arr[i],arr[minIdx] = arr[minIdx],arr[i]
 
-
-
 arr = [1,7,3,9,5,2,6,4]
 selectionSort(arr)
 print(arr)
