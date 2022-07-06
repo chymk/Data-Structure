@@ -1,3 +1,4 @@
+#Selection Sort
 def selectionSort(arr):
     for i in range(len(arr)):
         minIdx = i
