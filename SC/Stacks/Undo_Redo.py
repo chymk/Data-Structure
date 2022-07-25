@@ -30,5 +30,12 @@ class Operation:
         temp = self.redo.pop()
         self.calculate(temp[0],temp[1],True)
 
+o = Operation(10)
+o.calculate(5,'+')
+o.calculate(5,'+')
+o.printNum()
+o.undo_operation()
+o.printNum()
+
 
 
