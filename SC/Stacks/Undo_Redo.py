@@ -1,11 +1,14 @@
 class Operation:
     reverse_operator_map = {'*':'/','/':'*','+':'-','-':'+'}
+
     def __init__(self,num):
         self.num = num
         self.undo = []
         self.redo = []
+
     def printNum(self):
         print(self.num)
+
     def calculate(self,operand,operator,undo=False):
         match operator:
             case '+':
