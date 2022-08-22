@@ -1,6 +1,5 @@
 class Operation:
     reverse_operator_map = {'*':'/','/':'*','+':'-','-':'+'}
-
     def __init__(self,num):
         self.num = num
         self.undo = []
@@ -35,7 +34,7 @@ class Operation:
 
 o = Operation(10)
 o.calculate(5,'+')
-o.calculate(5,'+')
+o.calculate(5,'*')
 o.printNum()
 o.undo_operation()
 o.printNum()
